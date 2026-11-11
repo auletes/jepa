@@ -20,7 +20,7 @@ See [`FAITHFULNESS.md`](./FAITHFULNESS.md) for the load-bearing details each min
 ```bash
 git clone git@github.com:keon/jepa.git
 cd jepa
-python -m venv .venv && source .venv/bin/activate
+python3.13 -m venv .venv && source .venv/bin/activate   # or: uv venv --python 3.13 .venv
 pip install -r requirements.txt     # pinned versions, see below
 
 python ijepa.py                     # train I-JEPA only (no plots)
@@ -34,7 +34,7 @@ Runs on CUDA, MPS, or CPU. CIFAR-10 / MNIST datasets auto-download to `./data/`.
 The repo pins exact versions in [`requirements.txt`](./requirements.txt) and [`pyproject.toml`](./pyproject.toml):
 
 ```
-python >= 3.10  (tested on 3.13.5)
+python 3.11 - 3.14  (tested on 3.13; the pins have no wheels for 3.10 or 3.15)
 torch == 2.11.0
 torchvision == 0.26.0
 matplotlib == 3.10.9
